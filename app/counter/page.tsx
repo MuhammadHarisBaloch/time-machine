@@ -1,11 +1,12 @@
 "use client";
 import { Flex, Stack, Title } from "@mantine/core";
+import { useState } from "react";
 import CounterControls from "../../components/Counter/Controls";
 import RoundedButton from "../../components/Counter/RoundedButton";
-import { useState } from "react";
 
 export default function Counter() {
   const [counter, setCounter] = useState(0);
+
   return (
     <Stack>
       <CounterControls />
@@ -13,9 +14,8 @@ export default function Counter() {
         <RoundedButton
           text="-"
           onClick={() => {
-            if (counter != 0) {
-              setCounter(counter - 1);
-            }
+            if (counter == 0) return;
+            setCounter(counter - 1);
           }}
         />
         <Title order={3} fz="28rem" fw={300}>
