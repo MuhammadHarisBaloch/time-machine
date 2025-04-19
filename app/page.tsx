@@ -1,6 +1,10 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+import { Button, Stack } from "@mantine/core";
 export default function Home() {
-  return <>Hello</>;
+  return (
+    <Stack h="100vh" align="center" justify="center">
+      <Button w="200px">Counter</Button>
+      <Button w="200px">Stop</Button>
+      <Button w="200px">Lap</Button>
+    </Stack>
+  );
 }
