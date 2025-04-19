@@ -1,3 +1,10 @@
+import { Button } from "@mantine/core";
+import Link from "next/link";
+
 export default function Counter() {
-  return <>counter page</>;
+  return (
+    <Button component={Link} href="/">
+      Back
+    </Button>
+  );
 }
