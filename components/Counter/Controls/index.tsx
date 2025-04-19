@@ -7,7 +7,15 @@ import {
 } from "@tabler/icons-react";
 import Link from "next/link";
 
-function CounterControls() {
+interface CounterControlsProps {
+  onReloadClick?: () => void;
+  onSettingClick?: () => void;
+}
+
+function CounterControls({
+  onReloadClick,
+  onSettingClick,
+}: CounterControlsProps) {
   return (
     <Flex px="lg" pt="lg">
       <Link href="/">
@@ -18,8 +26,16 @@ function CounterControls() {
           className="hover-expand pointer"
           size={30}
         />
-        <IconSettingsFilled className="hover-expand pointer" size={30} />
-        <IconReload className="hover-expand pointer" size={30} />
+        <IconSettingsFilled
+          onClick={onSettingClick}
+          className="hover-expand pointer"
+          size={30}
+        />
+        <IconReload
+          onClick={onReloadClick}
+          className="hover-expand pointer"
+          size={30}
+        />
       </Flex>
     </Flex>
   );

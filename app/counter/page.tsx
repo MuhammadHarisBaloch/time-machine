@@ -9,7 +9,11 @@ export default function Counter() {
 
   return (
     <Stack>
-      <CounterControls />
+      <CounterControls
+        onReloadClick={() => {
+          setCounter(0);
+        }}
+      />
       <Flex align="center" justify="space-between" p="lg">
         <RoundedButton
           text="-"
