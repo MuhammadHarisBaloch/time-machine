@@ -3,13 +3,14 @@ import {
   Button,
   Overlay,
   Stack,
+  Text,
   Title,
   Transition,
-  Text,
 } from "@mantine/core";
+import Link from "next/link";
+import Links from "../../../constants/links";
 import PopHeart from "../PopHeart";
 import RoundedButton from "../RoundedButton";
-import Link from "next/link";
 
 interface InfoOverlayProps {
   opened: boolean;
@@ -39,15 +40,13 @@ function InfoOverlay({ opened, onClose }: InfoOverlayProps) {
             <Text ta="center">
               A simple tool for counting things and keeping <br /> track of
               numbers.{" "}
-              <Text
-                td="underline"
-                component={Link}
-                href="https://www.google.com"
-              >
+              <Text td="underline" component={Link} href={Links.google}>
                 Learn more
               </Text>
             </Text>
             <Button
+              component={Link}
+              href={Links.sagarGithub}
               color="red"
               miw={180}
               h={60}
@@ -59,7 +58,13 @@ function InfoOverlay({ opened, onClose }: InfoOverlayProps) {
             >
               Buy me a coffee
             </Button>
-            <Text>By Muhammad Haris 😍</Text>
+            <Text>
+              By{" "}
+              <Text td="underline" component={Link} href={Links.harisGithub}>
+                Muhammad Haris
+              </Text>{" "}
+              😍
+            </Text>
           </Stack>
         </Overlay>
       )}
