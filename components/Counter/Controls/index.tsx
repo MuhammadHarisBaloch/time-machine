@@ -6,7 +6,6 @@ import {
   IconSettingsFilled,
 } from "@tabler/icons-react";
 import Link from "next/link";
-import openSettingsModal from "../../SettingsModal";
 
 interface CounterControlsProps {
   onReloadClick?: () => void;
