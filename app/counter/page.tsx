@@ -1,11 +1,11 @@
 "use client";
-import { Button, Center, Flex, Stack, Title } from "@mantine/core";
+
+import { Flex, Stack, Title } from "@mantine/core";
 import { useState } from "react";
 import CounterControls from "../../components/Counter/Controls";
 import InfoOverlay from "../../components/Counter/InfoOverlay";
-import PopHeart from "../../components/Counter/PopHeart";
 import RoundedButton from "../../components/Counter/RoundedButton";
-import openSettingsModal from "@/components/SettingsModal";
+import openSettingsModal from "../../components/Counter/SettingsModal";
 
 export default function Counter() {
   const [counter, setCounter] = useState(0);
