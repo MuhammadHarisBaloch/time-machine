@@ -1,6 +1,14 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+"use client";
+import { Button, Stack } from "@mantine/core";
+import Link from "next/link";
 export default function Home() {
-  return <>Hello</>;
+  return (
+    <Stack h="100vh" align="center" justify="center">
+      <Button component={Link} href="/counter" w="200px">
+        Counter
+      </Button>
+      <Button w="200px">Blah</Button>
+      <Button w="200px">Blah</Button>
+    </Stack>
+  );
 }
