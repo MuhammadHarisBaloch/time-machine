@@ -6,6 +6,7 @@ import {
   IconSettingsFilled,
 } from "@tabler/icons-react";
 import Link from "next/link";
+import openSettingsModal from "../../SettingsModal";
 
 interface CounterControlsProps {
   onReloadClick?: () => void;
@@ -30,7 +31,9 @@ function CounterControls({
           onClick={onInfoClick}
         />
         <IconSettingsFilled
-          onClick={onSettingClick}
+          onClick={() => {
+            openSettingsModal({ counter: 40 });
+          }}
           className="hover-expand pointer"
           size={30}
         />
