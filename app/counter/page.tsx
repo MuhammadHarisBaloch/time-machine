@@ -1,7 +1,8 @@
 "use client";
-import { Flex, Overlay, Stack, Text, Title } from "@mantine/core";
+import { Flex, Stack, Title } from "@mantine/core";
 import { useState } from "react";
 import CounterControls from "../../components/Counter/Controls";
+import InfoOverlay from "../../components/Counter/InfoOverlay";
 import RoundedButton from "../../components/Counter/RoundedButton";
 
 export default function Counter() {
@@ -36,22 +37,12 @@ export default function Counter() {
           }}
         />
       </Flex>
-      {openOverlay ? (
-        <Overlay
-          color="#000"
-          backgroundOpacity={0.85}
-          onClick={() => {
-            setOpenOverlay(false);
-          }}
-        >
-          <Stack>
-            <Title order={2}>Simple Counter</Title>
-            <Text></Text>
-          </Stack>
-        </Overlay>
-      ) : (
-        <></>
-      )}
+      <InfoOverlay
+        opened={openOverlay}
+        onClose={() => {
+          setOpenOverlay(false);
+        }}
+      />
     </Stack>
   );
 }
