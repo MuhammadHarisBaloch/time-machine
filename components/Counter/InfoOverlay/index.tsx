@@ -1,6 +1,15 @@
-import { Affix, Button, Overlay, Stack, Transition } from "@mantine/core";
+import {
+  Affix,
+  Button,
+  Overlay,
+  Stack,
+  Title,
+  Transition,
+  Text,
+} from "@mantine/core";
 import PopHeart from "../PopHeart";
 import RoundedButton from "../RoundedButton";
+import Link from "next/link";
 
 interface InfoOverlayProps {
   opened: boolean;
@@ -19,13 +28,25 @@ function InfoOverlay({ opened, onClose }: InfoOverlayProps) {
         <Overlay
           style={styles}
           color="#000"
-          backgroundOpacity={0.85}
+          backgroundOpacity={0.95}
           onClick={onClose}
         >
           <Affix position={{ top: 25, right: 25 }}>
             <RoundedButton text="x" color="white" size={50} borderWidth={0.5} />
           </Affix>
-          <Stack>
+          <Stack align="center" justify="center" h="100vh" c="white">
+            <Title>Simple Counter</Title>
+            <Text ta="center">
+              A simple tool for counting things and keeping <br /> track of
+              numbers.{" "}
+              <Text
+                td="underline"
+                component={Link}
+                href="https://www.google.com"
+              >
+                Learn more
+              </Text>
+            </Text>
             <Button
               color="red"
               miw={180}
@@ -38,6 +59,7 @@ function InfoOverlay({ opened, onClose }: InfoOverlayProps) {
             >
               Buy me a coffee
             </Button>
+            <Text>By Muhammad Haris 😍</Text>
           </Stack>
         </Overlay>
       )}
