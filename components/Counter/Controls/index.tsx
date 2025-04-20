@@ -31,9 +31,7 @@ function CounterControls({
           onClick={onInfoClick}
         />
         <IconSettingsFilled
-          onClick={() => {
-            openSettingsModal({ counter: 40 });
-          }}
+          onClick={onSettingClick}
           className="hover-expand pointer"
           size={30}
         />

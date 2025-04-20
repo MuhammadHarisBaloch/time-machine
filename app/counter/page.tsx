@@ -5,6 +5,7 @@ import CounterControls from "../../components/Counter/Controls";
 import InfoOverlay from "../../components/Counter/InfoOverlay";
 import PopHeart from "../../components/Counter/PopHeart";
 import RoundedButton from "../../components/Counter/RoundedButton";
+import openSettingsModal from "@/components/SettingsModal";
 
 export default function Counter() {
   const [counter, setCounter] = useState(0);
@@ -18,6 +19,14 @@ export default function Counter() {
         }}
         onReloadClick={() => {
           setCounter(0);
+        }}
+        onSettingClick={() => {
+          openSettingsModal({
+            counter: counter,
+            onUpdateCounter: (newCounter) => {
+              setCounter(newCounter);
+            },
+          });
         }}
       />
       <Flex align="center" justify="space-between" p="lg">
