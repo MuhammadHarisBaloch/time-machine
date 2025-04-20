@@ -22,7 +22,7 @@ function InfoOverlay({ opened, onClose }: InfoOverlayProps) {
           onClick={onClose}
         >
           <Affix position={{ top: 25, right: 25 }}>
-            <RoundedButton text="x" />
+            <RoundedButton text="x" color="white" size={50} />
           </Affix>
         </Overlay>
       )}

@@ -2,26 +2,34 @@ import { Stack, Text } from "@mantine/core";
 
 interface RoundedButtonProps {
   text: string;
+  size?: number;
+  color?: string;
   onClick?: () => void;
 }
 
-function RoundedButton({ text, onClick }: RoundedButtonProps) {
+function RoundedButton({
+  text,
+  size = 65,
+  color = "black",
+  onClick,
+}: RoundedButtonProps) {
   return (
     <Stack
       className="hover-expand pointer"
-      w={65}
-      h={65}
-      bg="white"
+      w={size}
+      h={size}
+      bg="transparent"
       align="center"
       justify="center"
       pb="xs"
       style={{
         borderRadius: 50,
-        border: "1px solid black",
+        border: "1px solid ",
+        borderColor: color,
       }}
       onClick={onClick}
     >
-      <Text ta="center" fz="3rem" fw={400}>
+      <Text c={color} ta="center" fz="3rem" fw={400}>
         {text}
       </Text>
     </Stack>
