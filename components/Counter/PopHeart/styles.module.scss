@@ -1,0 +1,10 @@
+@keyframes beat {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.heart {
+  animation: beat 0.4s infinite alternate;
+  transform-origin: center;
+}

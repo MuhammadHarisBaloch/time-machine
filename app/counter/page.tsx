@@ -1,8 +1,9 @@
 "use client";
-import { Flex, Stack, Title } from "@mantine/core";
+import { Button, Center, Flex, Stack, Title } from "@mantine/core";
 import { useState } from "react";
 import CounterControls from "../../components/Counter/Controls";
 import InfoOverlay from "../../components/Counter/InfoOverlay";
+import PopHeart from "../../components/Counter/PopHeart";
 import RoundedButton from "../../components/Counter/RoundedButton";
 
 export default function Counter() {
@@ -10,7 +11,7 @@ export default function Counter() {
   const [openOverlay, setOpenOverlay] = useState(false);
 
   return (
-    <Stack>
+    <Stack h="100vh">
       <CounterControls
         onInfoClick={() => {
           setOpenOverlay(true);

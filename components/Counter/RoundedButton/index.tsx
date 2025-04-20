@@ -4,6 +4,7 @@ interface RoundedButtonProps {
   text: string;
   size?: number;
   color?: string;
+  borderWidth?: number;
   onClick?: () => void;
 }
 
@@ -11,6 +12,7 @@ function RoundedButton({
   text,
   size = 65,
   color = "black",
+  borderWidth = 1,
   onClick,
 }: RoundedButtonProps) {
   return (
@@ -24,8 +26,7 @@ function RoundedButton({
       pb="xs"
       style={{
         borderRadius: 50,
-        border: "1px solid ",
-        borderColor: color,
+        border: `${borderWidth}px solid ${color}`,
       }}
       onClick={onClick}
     >
