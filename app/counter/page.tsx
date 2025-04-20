@@ -6,11 +6,14 @@ import RoundedButton from "../../components/Counter/RoundedButton";
 
 export default function Counter() {
   const [counter, setCounter] = useState(0);
-  const [openOverlay, setOpenOverlay] = useState(true);
+  const [openOverlay, setOpenOverlay] = useState(false);
 
   return (
     <Stack>
       <CounterControls
+        onInfoClick={() => {
+          setOpenOverlay(true);
+        }}
         onReloadClick={() => {
           setCounter(0);
         }}
