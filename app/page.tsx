@@ -7,8 +7,8 @@ export default function Home() {
       <Button component={Link} href="/counter" w="200px" color="black">
         Counter
       </Button>
-      <Button color="black" w="200px">
-        Blah
+      <Button component={Link} href="/timer" color="black" w="200px">
+        Timer
       </Button>
       <Button color="black" w="200px">
         Blah
