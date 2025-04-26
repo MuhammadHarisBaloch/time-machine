@@ -22,7 +22,7 @@ export default function Counter() {
         }}
         onSettingClick={() => {
           openSettingsModal({
-            counter: counter,
+            counter,
             onUpdateCounter: (newCounter) => {
               setCounter(newCounter);
             },
