@@ -1,17 +1,32 @@
 "use client";
+
 import { Flex, Stack, Title } from "@mantine/core";
 import { useState } from "react";
 import CounterControls from "../../components/Counter/Controls";
+import InfoOverlay from "../../components/Counter/InfoOverlay";
 import RoundedButton from "../../components/Counter/RoundedButton";
+import openSettingsModal from "../../components/Counter/SettingsModal";
 
 export default function Counter() {
   const [counter, setCounter] = useState(0);
+  const [openOverlay, setOpenOverlay] = useState(false);
 
   return (
-    <Stack>
+    <Stack h="100vh">
       <CounterControls
+        onInfoClick={() => {
+          setOpenOverlay(true);
+        }}
         onReloadClick={() => {
           setCounter(0);
+        }}
+        onSettingClick={() => {
+          openSettingsModal({
+            counter,
+            onUpdateCounter: (newCounter) => {
+              setCounter(newCounter);
+            },
+          });
         }}
       />
       <Flex align="center" justify="space-between" p="lg">
@@ -32,6 +47,12 @@ export default function Counter() {
           }}
         />
       </Flex>
+      <InfoOverlay
+        opened={openOverlay}
+        onClose={() => {
+          setOpenOverlay(false);
+        }}
+      />
     </Stack>
   );
 }

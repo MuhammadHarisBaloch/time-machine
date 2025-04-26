@@ -10,11 +10,13 @@ import Link from "next/link";
 interface CounterControlsProps {
   onReloadClick?: () => void;
   onSettingClick?: () => void;
+  onInfoClick?: () => void;
 }
 
 function CounterControls({
   onReloadClick,
   onSettingClick,
+  onInfoClick,
 }: CounterControlsProps) {
   return (
     <Flex px="lg" pt="lg">
@@ -25,6 +27,7 @@ function CounterControls({
         <IconExclamationCircleFilled
           className="hover-expand pointer"
           size={30}
+          onClick={onInfoClick}
         />
         <IconSettingsFilled
           onClick={onSettingClick}
