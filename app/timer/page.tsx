@@ -1,28 +1,12 @@
 "use client";
-import { Box, Button, Flex, Group, Stack, Text, Title } from "@mantine/core";
+import TimerComponent from "@/components/Timer/TimerComponent";
+import { Box, Button, Flex, Stack, Text } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
-import RoundedButton from "../../components/Counter/RoundedButton";
 import { useState } from "react";
-import UpdateTimer from "@/components/Timer/TimerComponent";
-import TimerComponent from "@/components/Timer/TimerComponent";
-
-// function formatTimer(timer: number) {
-//   if (timer < 10) {
-//     return `0${timer}`;
-//   }
-//   return timer;
-// }
-
-// function formatTimer(timer: number) {
-//   return timer.toString().padStart(2, "0");
-// }
+import RoundedButton from "../../components/Counter/RoundedButton";
 
 export default function TimerPage() {
-  // const [seconds, setSeconds] = useState(57);
-  // const [minutes, setMinutes] = useState(30);
-  // const [hours, setHours] = useState(1);
-
   const [timer, setTimer] = useState(4892);
 
   return (
@@ -47,7 +31,6 @@ export default function TimerPage() {
           Start
         </Button>
         <TimerComponent timer={timer} />
-
         <Stack>
           <RoundedButton text="+" />
           <RoundedButton text="-" />
@@ -56,4 +39,3 @@ export default function TimerPage() {
     </Stack>
   );
 }
-
