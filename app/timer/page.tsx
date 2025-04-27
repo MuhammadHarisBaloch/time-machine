@@ -1,10 +1,11 @@
 "use client";
 import TimerComponent from "@/components/Timer/TimerComponent";
-import { Box, Button, Flex, Stack, Text } from "@mantine/core";
+import { Box, Button, Flex, Stack, Text, UnstyledButton } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import RoundedButton from "../../components/Counter/RoundedButton";
+import openUpdateTimerModal from "@/components/Timer/openUpdateTimerModal";
 
 export default function TimerPage() {
   const [timer, setTimer] = useState(1000);
@@ -28,7 +29,9 @@ export default function TimerPage() {
         <Box component={Link} href="/" m="lg">
           <IconArrowLeft className="hover-expand" color="black" size={30} />
         </Box>
-        <Text fz="1.5rem">Click on timer to edit!</Text>
+        <UnstyledButton onClick={openUpdateTimerModal} fz="1.5rem">
+          Click on timer to edit!
+        </UnstyledButton>
         <Box />
       </Flex>
 
