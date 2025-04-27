@@ -3,11 +3,24 @@ import TimerComponent from "@/components/Timer/TimerComponent";
 import { Box, Button, Flex, Stack, Text } from "@mantine/core";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RoundedButton from "../../components/Counter/RoundedButton";
 
 export default function TimerPage() {
-  const [timer, setTimer] = useState(4892);
+  const [timer, setTimer] = useState(1000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer((prevValue) => {
+        if (prevValue <= 0) {
+          clearInterval(interval);
+          return 0;
+        }
+        return prevValue - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Stack h="100vh">
