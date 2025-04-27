@@ -1,12 +1,18 @@
 "use client";
-import { Button, Flex, NumberInput, Stack } from "@mantine/core";
 import { modals } from "@mantine/modals";
-import { useState } from "react";
 import UpdateTimerModalItem from "../UpdateTimerModalItem";
 
-export default function openUpdateTimerModal() {
+export default function openUpdateTimerModal(
+  onTimerUpdate: (newTimer: number) => void
+) {
   return modals.open({
     title: "Update Timer",
-    children: <UpdateTimerModalItem />,
+    children: (
+      <UpdateTimerModalItem
+        onUpdateTimer={(newTimer) => {
+          onTimerUpdate(newTimer);
+        }}
+      />
+    ),
   });
 }

@@ -1,11 +1,16 @@
-import { Stack, Flex, NumberInput, Button } from "@mantine/core";
+import { Button, Flex, NumberInput, Stack } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import { useState } from "react";
 
-export default function UpdateTimerModalItem() {
-  const [hours, setHours] = useState<string | number>("");
-  const [minutes, setMinutes] = useState<string | number>("");
-  const [seconds, setSeconds] = useState<string | number>("");
+interface UpdateTimerModalItemProps {
+  onUpdateTimer: (newTimer: number) => void;
+}
+export default function UpdateTimerModalItem({
+  onUpdateTimer,
+}: UpdateTimerModalItemProps) {
+  const [hours, setHours] = useState<string | number>("0");
+  const [minutes, setMinutes] = useState<string | number>("0");
+  const [seconds, setSeconds] = useState<string | number>("0");
 
   return (
     <Stack>
@@ -30,6 +35,7 @@ export default function UpdateTimerModalItem() {
           modals.closeAll();
           const timer = +hours * 3600 + +minutes * 60 + +seconds;
           console.log(timer);
+          onUpdateTimer(timer);
         }}
       >
         Update Timer
