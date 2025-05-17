@@ -10,8 +10,8 @@ export default function Home() {
       <Button component={Link} href="/timer" color="black" w="200px">
         Timer
       </Button>
-      <Button color="black" w="200px">
-        Blah
+      <Button component={Link} href="/stopwatch" color="black" w="200px">
+        Stop watch
       </Button>
     </Stack>
   );
